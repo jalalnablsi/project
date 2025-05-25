@@ -1,5 +1,12 @@
-# Ignore environment variables file
-.env
-
-# Ignore node_modules directory
+# General
 node_modules/
+.env
+.env.local
+.DS_Store
+
+# MongoDB
+/data/db
+
+# Next.js
+.next/
+out/
