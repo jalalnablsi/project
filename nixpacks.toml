@@ -1,0 +1,15 @@
+# توجيه Nixpacks للتعامل مع مشروع متعدد الأجزاء (Monorepo)
+[nix]
+pkgs = ["nodejs", "git"] # حزم النظام الأساسية
+
+[build]
+command = """
+cd client && npm install && npm run build &&
+cd ../server && npm install && npm run build
+"""
+
+[start]
+command = """
+cd server && node index.js &
+cd ../client && npm start
+"""
